@@ -1,0 +1,120 @@
+.copied-animation-div {
+    opacity: 0
+}
+
+.copied-animation {
+    -webkit-animation: copied-animation 1.8s both;
+    animation: copied-animation 1.8s both
+}
+
+@-webkit-keyframes copied-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(10px)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-20px)
+    }
+}
+
+@keyframes copied-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(10px)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-20px)
+    }
+}
+
+.jello-horizontal {
+    -webkit-animation: jello-horizontal .9s both;
+    animation: jello-horizontal .9s both
+}
+
+@-webkit-keyframes jello-horizontal {
+    0% {
+        transform: scaleX(1)
+    }
+
+    30% {
+        transform: scale3d(1.25,.75,1)
+    }
+
+    40% {
+        transform: scale3d(.75,1.25,1)
+    }
+
+    50% {
+        transform: scale3d(1.15,.85,1)
+    }
+
+    65% {
+        transform: scale3d(.95,1.05,1)
+    }
+
+    75% {
+        transform: scale3d(1.05,.95,1)
+    }
+
+    to {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes jello-horizontal {
+    0% {
+        transform: scaleX(1)
+    }
+
+    30% {
+        transform: scale3d(1.25,.75,1)
+    }
+
+    40% {
+        transform: scale3d(.75,1.25,1)
+    }
+
+    50% {
+        transform: scale3d(1.15,.85,1)
+    }
+
+    65% {
+        transform: scale3d(.95,1.05,1)
+    }
+
+    75% {
+        transform: scale3d(1.05,.95,1)
+    }
+
+    to {
+        transform: scaleX(1)
+    }
+}
+.mb-0{
+  margin-bottom: 0!important;
+}
