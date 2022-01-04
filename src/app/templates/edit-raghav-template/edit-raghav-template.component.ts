@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Employee } from 'src/models/employee.modal';
 import { RaghavTemplateService } from 'src/services/raghav-template.service';
 
@@ -10,13 +11,14 @@ import { RaghavTemplateService } from 'src/services/raghav-template.service';
 })
 export class EditRaghavTemplateComponent implements OnInit {
   employees: Employee[] = [];
+  sub: Subscription = new Subscription();
   constructor(public raghavTemplateService: RaghavTemplateService) {}
 
   ngOnInit(): void {
-    const destroy = this.raghavTemplateService.sharedEmployees.subscribe(
+    this.sub = this.raghavTemplateService.sharedEmployees.subscribe(
       (employees) => {
         this.employees = employees;
-        destroy.unsubscribe();
+        this.sub.unsubscribe();
       }
     );
   }
