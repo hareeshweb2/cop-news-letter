@@ -1,3 +1,9 @@
+
+# Tailwind sync styles command
+
+npx tailwindcss -i ./src/styles.css -o ./src/assets/output.css --watch
+
+
 # CopNewsLetter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
