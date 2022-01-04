@@ -8,9 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialExampleModule } from 'src/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
+import { EditRaghavTemplateComponent } from './templates/edit-raghav-template/edit-raghav-template.component';
+import { PreviewRaghavTemplateComponent } from './templates/preview-raghav-template/preview-raghav-template.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, EditRaghavTemplateComponent, PreviewRaghavTemplateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

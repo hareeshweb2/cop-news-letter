@@ -1,0 +1,33 @@
+<!--employee spotlight start-->
+<div class="w-5/6 flex flex-col mx-auto px-4 py-6 mt-4 border border-gray-400 rounded-sm">
+  <div class="py-6 bg-[url('https://picsum.photos/1600/140?grayscale')]">
+    <div class="h-auto bg-cyan-600 text-center p-4 text-white font-semi-bold text-2xl opacity-80">Employee Spotlight
+    </div>
+  </div>
+  <div class="flex flex-col pt-4" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="flex m-4 mx-6 p-4 border-cyan-500 border-2 rounded-sm relative" *ngFor="let employee of employees;"
+      cdkDrag>
+      <div
+        class="h-44 w-40 flex-none px-2 flex flex-col justify-center items-center bg-cyan-600 bg-opacity-75 rounded-2xl">
+        <img [src]="employee.imgUrl" class="w-20 h-20 rounded-full" alt="">
+        <div class="flex text-white mt-2">{{employee.name}}</div>
+        <div class="flex flex-col text-white justify-center items-center mt-2">
+          <div class="text-sm">Software developer</div>
+          <div class="text-sm">1 Austin</div>
+        </div>
+      </div>
+      <div class="flex justify-center items-center px-6">
+        <div contenteditable (blur)="onContentChange(employee.id, $event.target)" [innerHTML]="employee.message"> </div>
+      </div>
+      <div class="drag-handle" cdkDragHandle>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+          </path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<!--employee spotlight end-->
