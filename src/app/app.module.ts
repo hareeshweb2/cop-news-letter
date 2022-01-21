@@ -10,9 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EditRaghavTemplateComponent } from './templates/edit-raghav-template/edit-raghav-template.component';
 import { PreviewRaghavTemplateComponent } from './templates/preview-raghav-template/preview-raghav-template.component';
+import { NgxCaptureModule } from 'ngx-capture';
 
 @NgModule({
-  declarations: [AppComponent, EditRaghavTemplateComponent, PreviewRaghavTemplateComponent],
+  declarations: [
+    AppComponent,
+    EditRaghavTemplateComponent,
+    PreviewRaghavTemplateComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +27,7 @@ import { PreviewRaghavTemplateComponent } from './templates/preview-raghav-templ
     MatNativeDateModule,
     MaterialExampleModule,
     ReactiveFormsModule,
+    NgxCaptureModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

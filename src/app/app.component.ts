@@ -1,7 +1,9 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RaghavTemplateService } from 'src/services/raghav-template.service';
+import { NgxCaptureService } from 'ngx-capture';
+import { tap } from 'rxjs';
 
 function copyToClip(str: any) {
   function listener(e: any) {
@@ -29,7 +31,12 @@ export class AppComponent implements OnInit {
     end: new FormControl(),
   });
 
-  constructor(public raghavTemplateService: RaghavTemplateService) {}
+  @ViewChild('screen', { static: true }) screen: any;
+
+  constructor(
+    public raghavTemplateService: RaghavTemplateService,
+    public captureService: NgxCaptureService
+  ) {}
 
   ngOnInit(): void {
     this.raghavTemplateService.nextEmployees([
@@ -57,8 +64,18 @@ export class AppComponent implements OnInit {
     const str: any = document.getElementById('foo')?.innerHTML;
 
 
-    copyToClip(str);
+    // this.captureService
+    //   .getImage(this.screen.nativeElement, true)
+    //   .pipe(
+    //     tap((img) => {
+    //       // console.log(img);
+    //      const str1  =  `<img src="${img}" alt="" width=1220 height=1340 >`;
+    //       copyToClip(str1);
+    //     })
+    //   )
+    //   .subscribe();
 
+    copyToClip(str);
   }
 
   playAnimation() {

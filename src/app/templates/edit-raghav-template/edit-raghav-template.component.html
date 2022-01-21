@@ -1,33 +1,562 @@
-<!--employee spotlight start-->
+<!--key metrics start-->
 <div class="w-5/6 flex flex-col mx-auto px-4 py-6 mt-4 border border-gray-400 rounded-sm">
-  <div class="py-6 bg-[url('https://picsum.photos/1600/140?grayscale')]">
-    <div class="h-auto bg-cyan-600 text-center p-4 text-white font-semi-bold text-2xl opacity-80">Employee Spotlight
-    </div>
-  </div>
-  <div class="flex flex-col pt-4" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div class="flex m-4 mx-6 p-4 border-cyan-500 border-2 rounded-sm relative" *ngFor="let employee of employees;"
-      cdkDrag>
-      <div
-        class="h-44 w-40 flex-none px-2 flex flex-col justify-center items-center bg-cyan-600 bg-opacity-75 rounded-2xl">
-        <img [src]="employee.imgUrl" class="w-20 h-20 rounded-full" alt="">
-        <div class="flex text-white mt-2">{{employee.name}}</div>
-        <div class="flex flex-col text-white justify-center items-center mt-2">
-          <div class="text-sm">Software developer</div>
-          <div class="text-sm">1 Austin</div>
-        </div>
-      </div>
-      <div class="flex justify-center items-center px-6">
-        <div contenteditable (blur)="onContentChange(employee.id, $event.target)" [innerHTML]="employee.message"> </div>
-      </div>
-      <div class="drag-handle" cdkDragHandle>
-        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+
+
+  <div class="w-full flex gap-4 p-4">
+
+    <div class="flex flex-col w-1/8 justify-center items-center loop">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
-          </path>
-          <path d="M0 0h24v24H0z" fill="none"></path>
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
         </svg>
       </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-1/8 justify-center items-center">
+      <div class="flex justify-center items-center w-10/12 h-auto p-2 px-6 bg-cyan-600 text-white rounded-t-lg shadow">
+        <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+            stroke-width="2"></path>
+          <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+        </svg>
+      </div>
+
+      <div class="flex justify-center items-center w-full border-2 border-cyan-600 rounded-lg py-1">
+        <span class="text-center font-semibold tracking-wide">Real Time Fund Transfer</span>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center gap-1 w-10/12 border-4 border-solid border-t-0 border-cyan-600 rounded-b-lg py-1">
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+          Processed</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+        <span class="text-center text-xs text-white bg-cyan-600/75 p-1 rounded-sm tracking-wide mt-1">Value</span>
+        <span class="text-center text-xl font-bold tracking-wide underline underline-offset-4">20,934</span>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <div class="w-full flex gap-4 p-4">
+
+    <div class="flex flex-col w-1/5 justify-center items-center loop">
+
+      <div
+        class="flex flex-col w-full h-auto border-2 border-green-600 rounded-tr-[50px] relative pt-12 pl-4 gap-4 pr-4 pb-6">
+
+        <div class="absolute -top-10 left-2 bg-green-600 p-4 rounded-sm">
+          <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+              stroke-width="2"></path>
+            <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+          </svg>
+        </div>
+
+        <div class="font-bold border-b-2 border-black mr-6 pb-2">BD ACH (Moneylink)</div>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex border-b-2 border-gray-700 pb-2">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+    <div class="flex flex-col w-1/5 justify-center items-center loop">
+
+      <div
+        class="flex flex-col w-full h-auto border-2 border-green-600 rounded-tr-[50px] relative pt-12 pl-4 gap-4 pr-4 pb-6">
+
+        <div class="absolute -top-10 left-2 bg-green-600 p-4 rounded-sm">
+          <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+              stroke-width="2"></path>
+            <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+          </svg>
+        </div>
+
+        <div class="font-bold border-b-2 border-black mr-6 pb-2">BD ACH (Moneylink)</div>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex border-b-2 border-gray-700 pb-2">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="flex flex-col w-1/5 justify-center items-center loop">
+
+      <div
+        class="flex flex-col w-full h-auto border-2 border-green-600 rounded-tr-[50px] relative pt-12 pl-4 gap-4 pr-4 pb-6">
+
+        <div class="absolute -top-10 left-2 bg-green-600 p-4 rounded-sm">
+          <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+              stroke-width="2"></path>
+            <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+          </svg>
+        </div>
+
+        <div class="font-bold border-b-2 border-black mr-6 pb-2">BD ACH (Moneylink)</div>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex border-b-2 border-gray-700 pb-2">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="flex flex-col w-1/5 justify-center items-center loop">
+
+      <div
+        class="flex flex-col w-full h-auto border-2 border-green-600 rounded-tr-[50px] relative pt-12 pl-4 gap-4 pr-4 pb-6">
+
+        <div class="absolute -top-10 left-2 bg-green-600 p-4 rounded-sm">
+          <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+              stroke-width="2"></path>
+            <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+          </svg>
+        </div>
+
+        <div class="font-bold border-b-2 border-black mr-6 pb-2">BD ACH (Moneylink)</div>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex border-b-2 border-gray-700 pb-2">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="flex flex-col w-1/5 justify-center items-center loop">
+
+      <div
+        class="flex flex-col w-full h-auto border-2 border-green-600 rounded-tr-[50px] relative pt-12 pl-4 gap-4 pr-4 pb-6">
+
+        <div class="absolute -top-10 left-2 bg-green-600 p-4 rounded-sm">
+          <svg class="stroke-white h-8" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+              stroke-width="2"></path>
+            <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+          </svg>
+        </div>
+
+        <div class="font-bold border-b-2 border-black mr-6 pb-2">BD ACH (Moneylink)</div>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex border-b-2 border-gray-700 pb-2">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <span class="text-center text-xs text-white bg-green-600/75 p-1 rounded-sm tracking-wide mt-1">Volume
+              Processed</span>
+
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">Schwab</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold border-b-2 border-black mr-11">TDA</div>
+              <div class="font-bold  pt-2">20,934</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
   </div>
 </div>
-<!--employee spotlight end-->
+
+
+  <!--employee spotlight start-->
+  <div class="w-full flex flex-col mx-auto px-4 py-6 mt-4 border border-gray-400 rounded-sm">
+    <div class="py-6 bg-[url('https://picsum.photos/1600/140?grayscale')]">
+      <div class="h-auto bg-cyan-600 text-center p-4 text-white font-semi-bold text-2xl opacity-80">Employee Spotlight
+      </div>
+    </div>
+    <div class="flex flex-col pt-4" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div class="flex m-4 mx-6 p-4 border-cyan-500 border-2 rounded-sm relative" *ngFor="let employee of employees;"
+        cdkDrag>
+        <div
+          class="h-44 w-40 flex-none px-2 flex flex-col justify-center items-center bg-cyan-600 bg-opacity-75 rounded-2xl">
+          <img src="assets/testhar.jpg" class="w-20 h-20 rounded-full" alt="">
+          <div class="flex text-white mt-2">{{employee.name}}</div>
+          <div class="flex flex-col text-white justify-center items-center mt-2">
+            <div class="text-sm">Software developer</div>
+            <div class="text-sm">1 Austin</div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center px-6">
+          <div contenteditable (blur)="onContentChange(employee.id, $event.target)" [innerHTML]="employee.message">
+          </div>
+        </div>
+        <div class="drag-handle" cdkDragHandle>
+          <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+            </path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--employee spotlight end-->
