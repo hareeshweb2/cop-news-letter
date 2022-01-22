@@ -61,21 +61,25 @@ export class AppComponent implements OnInit {
 
   copyToClipboard() {
     this.playAnimation();
-    const str: any = document.getElementById('foo')?.innerHTML;
+    // const str: any = document.getElementById('foo')?.innerHTML;
 
 
-    // this.captureService
-    //   .getImage(this.screen.nativeElement, true)
-    //   .pipe(
-    //     tap((img) => {
-    //       // console.log(img);
-    //      const str1  =  `<img src="${img}" alt="" width=1220 height=1340 >`;
-    //       copyToClip(str1);
-    //     })
-    //   )
-    //   .subscribe();
+    this.captureService
+      .getImage(this.screen.nativeElement, true)
+      .pipe(
+        tap((img) => {
+          // console.log(img);
+         const str1  =  `<img src="${img}" alt="" width=1220 height=200 >`;
+         const imgEl: HTMLImageElement = window.document.createElement('img');
+         imgEl.setAttribute('src', img);
+         window.document?.getElementById('appendtest')?.appendChild(imgEl);
+         const str: any = document.getElementById('foo')?.innerHTML;
+          copyToClip(str);
+        })
+      )
+      .subscribe();
 
-    copyToClip(str);
+    // copyToClip(str);
   }
 
   playAnimation() {
